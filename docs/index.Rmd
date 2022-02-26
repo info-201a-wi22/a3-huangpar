@@ -1,0 +1,62 @@
+---
+title: "Incarceration in Washington"
+author: "Parker Huang"
+date: "2/25/2022"
+output: html_document
+---
+```{r dataset, echo=FALSE}
+data <- read.csv("https://raw.githubusercontent.com/vera-institute/incarceration-trends/master/incarceration_trends.csv")
+```
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+setwd("/Users/parkerhuang/documents/info201code/a3-huangpar/source")
+library("knitr")
+library("dplyr")
+library("tidyr")
+library("ggplot2")
+library("maps")
+library("mapproj")
+source("analysis.R")
+source("Graph-1.R")
+source("Graph-2.R")
+source("Map.R")
+```
+
+
+## Introduction
+
+I will be analyzing differences in incarceration between races and genders. To do this I will compare the total number of males and females incarcerated in the state of Washington. I will also be comparing the total number of each race incarcerated in the state of Washington. I will also find out how much of the total incarcerated population each of these groups make up. 
+
+
+
+## Summary
+
+The summary values that I chose to focus on were the total number of people incarcerated in Washington state in 2018, the total number of black people incarcerated in Washington in 2018, The portion of the total incarcerated population that was black is 2018, The portion of the total incarcerated population that was black is 1970, the portion of the incarcerated population that was white in 2018, and the portion of the incarcerated population that was white in 1970. These values will allow you to compare portions of incarcerated people that are back and those that are white and see if those numbers have gotten closer together or farther apart over time.
+
+
+
+## Graph 1
+```{r, echo=FALSE, results='asis'}
+print(incarceration_line)
+```
+
+This graph was included to show how the amount of incarcerated people in each group from Washington changed over time. From this graph you see that they were all pretty much the same until about 1985 when they all started to increase at different rates. You can also see how the amount of incarcerated white people increased significantly faster than any other race and is still much higher today.
+
+
+
+## Graph 2
+```{r, echo=FALSE, results='asis'}
+print(incarceration_scatter)
+```
+
+This graph was included to show how the total number of incarcerated people in Washington changed over time. From this graph you see that from about 1980 to 2010 the amount of incarcerated people increased pretty rapidly. You also see that in 2010 the amount of incarcerated people dropped and that leveled out to where it has been since then.
+
+
+
+## Map
+```{r, echo=FALSE, results='asis'}
+print(incarceration_map)
+```
+
+This map was included to show which Counties in Washington have the most people incarcerated. The map shows that while most counties have a pretty similar amount of people incarcerated, King County has significantly more than any other county.
